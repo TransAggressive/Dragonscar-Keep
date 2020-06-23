@@ -24,6 +24,9 @@ Edit Log:
 		Continued: 01/10/20
 			Developed navigation system (roughly), allowing player positions to update and map to reflect.
 			Developed system to 'populate' room, checking for combat chance.
+		Continued: 06/23/20
+			Updated the exit locating code to actually search in the correct directions.
+			Updated the exit output code to be cleaner.
 */
 
 int roll(int lower, int upper);
