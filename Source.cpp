@@ -857,15 +857,16 @@ void mapGen(int xAxis, int yAxis) { // Generating a map of size x*y
 		}
 		void checkSouth() {
 			std::string sample;
-			if (map[characterLocationY - 1][characterLocationX] == " ") {
+			if (map[characterLocationY + 1][characterLocationX] == " ") {
 				clearSouth = true;
 				exitCount++;
 			}
 			else clearSouth = false;
 	}
 		void callExits() { // Outputting the available exits, based on the available locations surrounding the current space, as determined by directionCheck().
+			std::cout << "\nYou see ";
 			if (exitCount == 1) {
-				std::cout << "\nYou see an exit to the ";
+				std::cout << "an exit to the ";
 				if (clearNorth == true) {
 					std::cout << "north." << std::endl;
 				}
@@ -881,9 +882,9 @@ void mapGen(int xAxis, int yAxis) { // Generating a map of size x*y
 				}
 			}
 			else if (exitCount > 1 && exitCount < 5) {
-				std::cout << "\nYou see exits to the ";
+				std::cout << "exits to the ";
 				if (clearNorth == true) {
-					std::cout << "north, ";
+					std::cout << "north, "; 
 				}
 				if (clearEast == true) {
 					std::cout << "east, ";
@@ -896,7 +897,7 @@ void mapGen(int xAxis, int yAxis) { // Generating a map of size x*y
 				}
 			}
 			else {
-				std::cout << "no exits from this chamber.";
+				std::cout << "no exits from this chamber." << std::endl;
 			}
 		}
 	void roomCheck() {
